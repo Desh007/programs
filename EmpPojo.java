@@ -1,5 +1,6 @@
+package sorting;
 
-public class EmpPojo {
+public class EmpPojo implements Comparable<EmpPojo>{
 	
 	private int eid;
 	private String ename;
@@ -42,6 +43,14 @@ public class EmpPojo {
 
 	public void setEsal(float esal) {
 		this.esal = esal;
+	}
+
+	@Override
+	public int compareTo(EmpPojo e1) {
+		if(this.eid<e1.eid)
+			return 1;
+		else
+		return -1;
 	}
 	
 	

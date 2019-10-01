@@ -1,3 +1,5 @@
+package sorting;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Vector;
 
@@ -7,10 +9,7 @@ public class EmpList {
 		
 		Vector<EmpPojo> v=new Vector<EmpPojo>();
 		
-		EmpPojo e1=new EmpPojo();
-		e1.setEid(12);
-		e1.setEname("aa");
-		e1.setEsal(55);
+		EmpPojo e1=new EmpPojo(12, "aa", 55);
 		EmpPojo e2=new EmpPojo(2, "ss", 99);
 		EmpPojo e3=new EmpPojo(22, "rr", 44);
 		
@@ -26,7 +25,17 @@ public class EmpList {
 			EmpPojo e=i.next();
 			System.out.println(e.getEid()+"\t"+e.getEname()+"\t"+e.getEsal());
 		}
-
+		
+		Collections.sort(v);
+System.out.println("after sorting");
+Iterator<EmpPojo> i2=v.iterator();
+		
+		while(i2.hasNext())
+		{
+			
+			EmpPojo e=i2.next();
+			System.out.println(e.getEid()+"\t"+e.getEname()+"\t"+e.getEsal());
+		}
 	}
 
 }
